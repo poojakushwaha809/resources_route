@@ -1,0 +1,23 @@
+
+<p>
+  <strong>Commenter:</strong>
+  <%= pooja.commenter %>
+</p>
+ 
+<p>
+  <strong>Comment:</strong>
+  <%= pooja.body %>
+</p>
+
+
+<p>
+  <%= link_to 'Destroy Comment', [pooja.article, pooja],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
+
+
+<%= render 'replies/form',kushwaha: pooja %>
+
+
+# 
