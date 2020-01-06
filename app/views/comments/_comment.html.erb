@@ -16,8 +16,12 @@
                data: { confirm: 'Are you sure?' } %>
 </p>
 
+<% pooja.replies.each do |reply| %>
+
+<%= render 'replies/reply', reply:reply, comment: pooja %>
+
+<% end %>
+
 
 <%= render 'replies/form',kushwaha: pooja %>
 
-
-# 

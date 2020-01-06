@@ -1,0 +1,9 @@
+<p>
+  <strong>Answer:</strong>
+  <%= answer.answer %>
+</p>
+<p>
+  <%= link_to 'Destroy Answer', article_comment_reply_answer_path(@article, comment, reply, answer),
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

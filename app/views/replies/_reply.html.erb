@@ -7,9 +7,17 @@
 
 
 <p>
-  <%= link_to 'Destroy Reply', article_comment_reply(@article, comment, id)
+  <%= link_to 'Destroy Reply', article_comment_reply_path(@article, comment, reply ),
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
 </p>
+
+
+<% reply.answers.each do |answer| %>
+<%= render 'answers/answer', answer: answer, comment: comment, reply: reply  %>
+<% end %>
+
+<%= render 'answers/form', comment: comment, reply: reply  %>
+
 
 

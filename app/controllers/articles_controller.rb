@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController 
 
 	def index
-		@articles = Article.all
+		@articles = current_user.articles
 		
 	end
 	
@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
 
 	def create
 		@article = Article.new(article_params)
+		@article.user_id = current_user.id
 		if @article.save
 		# redirect_to @article
 		# or
